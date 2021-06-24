@@ -39,7 +39,7 @@ async function run() {
 
         const octokit = getOctokit(token);
 
-        console.log('Going to collect coverage...');
+        console.info('Going to collect coverage...');
 
         const [headReport, jsonReport] = await collectCoverage(
             testScript,
@@ -49,7 +49,7 @@ async function run() {
             workingDirectory
         );
 
-        console.log('Going to collect coverage again...');
+        console.info('Going to collect coverage again...');
         const [baseReport] = await collectCoverage(
             testScript,
             packageManager,
